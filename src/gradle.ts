@@ -96,7 +96,7 @@ export function getTaskToPublish(
       });
       child.stderr.setEncoding("utf8");
       child.stderr.pipe(split()).on("data", (line: string) => {
-        logger.error(line);
+        logger.info(line);
       });
       child.on("close", (code: number) => {
         if (code !== 0) {
